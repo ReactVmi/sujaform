@@ -107,7 +107,7 @@ const Index = () => {
   const handleLoadMore = async () => {
     try {
       // console.log("Page no",page);
-      const response = await fetch("/api/leads/loadMore/?page=" + page);
+      const response = await fetch("/api/bookingrequest/loadMore/?page=" + page);
       const responseData = await response.json();
       // console.log("handleLoadMore",responseData);
       setLoad(true);
@@ -194,7 +194,7 @@ const Index = () => {
       // console.log("result of date", result);
       let finalResult = result.data.msg;
       // finalResult = finalResult.json();
-      setLeadsData(finalResult);
+      // setLeadsData(finalResult);
       // console.log("handledata filter", finalResult);
     } catch (error) {
       console.log("Handle date filter", error);
@@ -236,7 +236,7 @@ const Index = () => {
 
   useEffect(()=>{
     const fetchTotal = async()=>{
-        const result = await fetch('/api/leads/loadMore/');
+        const result = await fetch('/api/bookingrequest/loadMore/');
         let fetchTotalLead = await result.json();
         // console.log("Total Leads Count",fetchTotalLead.totalCount);
         setCount(fetchTotalLead.totalCount)
@@ -307,7 +307,9 @@ const Index = () => {
       ) : (
         <>
           <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap">
-            <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col">
+           {/* Date Filter */}
+
+            {/* <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col">
               <DatePicker
                 showIcon
                 selected={startDate}
@@ -337,7 +339,7 @@ const Index = () => {
               >
                 Reset
               </button>
-            </div>
+            </div> */}
             <div className="flex justify-between mt-2 sm:mt-0 ">
               {/* <div className="text-gray-400 mr-4 my-2">
                 <strong>Current Order Count: </strong>{" "}
@@ -347,7 +349,9 @@ const Index = () => {
                 <strong>Total Orders </strong>{" "}
                 {count}
               </div> */}
-              <div className="md:text-end relative">
+
+              {/* All filter */}
+              {/* <div className="md:text-end relative">
                 <input
                   className={`p-2 md:me-2 rounded-md border-white border-[2px]`}
                   type="text"
@@ -376,7 +380,7 @@ const Index = () => {
                     )}
                   </span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="w-full p-2 my-3  flex items-center justify-center text-white bg-black flex-col">
@@ -572,7 +576,7 @@ const Index = () => {
                                     </div>
                                   )
                                 )}
-                                <div>/ {data.step5.intensiveCourse}</div>
+                                <div>/ {data.step5?.intensiveCourse}</div>
                               </div>
                             </p>
                           </td>
@@ -879,7 +883,7 @@ const Index = () => {
                             Course Speed:{" "}
                           </h4>
                           <span className=" md:text-base text-sm">
-                            {viewLead.step5.intensiveCourse}
+                            {viewLead.step5?.intensiveCourse}
                           </span>
                         </div>
                         {/* <div>
