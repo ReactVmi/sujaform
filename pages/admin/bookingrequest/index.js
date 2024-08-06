@@ -990,7 +990,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Practical Test
+                              Fast Track Practical (Practical Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1008,7 +1008,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Theory Test
+                              Free Theory Subscription  (Theory Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1026,7 +1026,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              I've already passed 
+                              I've already passed (Theory Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1044,7 +1044,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              I've already booked
+                              {viewLead.step3.i_have_already ? "I have Already Booked" : ''} (Theory Test) 
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
