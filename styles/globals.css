@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.datepicker-wrap .react-datepicker__view-calendar-icon input {
+  padding: 10px;
+  padding-left: 36px;
+  border-radius: 5px;
+}
+
+.datepicker-wrap  .react-datepicker__input-container .react-datepicker__calendar-icon {
+  top: 6px;
+  left: auto;
+  right: 3px;
+  fill: grey;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+
+/* .dr_type:checked + label,
+.dr_course_type:checked + label,
+.dr_course_price:checked + label,
+.fast_track:checked + label,
+.title:checked + label,
+.intensive:checked + label{
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+} */
+.dr_type:checked + label,
+.dr_course_type:checked + label,
+.dr_course_price:checked + label,
+.fast_track:checked + label,
+.title:checked + label,
+.intensive:checked + label,
+.payment:checked + label {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  --tw-ring-color: #3ECD3E; /* Change this to your desired green color */
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+
+  /* Background color when checked */
+  background-color: #eafaef; /* Change this to your desired gray color */
+}
+
+.course_pkg {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.course_pkg.show {
+   height: auto;
+  -webkit-transition: height .3s ease;
+}
+
+/* Add this CSS in a separate file or include it in your component's styles */
+
+/* Styling for the modal overlay */
+.ReactModalPortal {
+  position: relative;
+  z-index: 50;
+}
+.ReactModal__Overlay {
+  opacity: 0;
+  background-color: rgb(0 0 0 / 75%)!important;
+  transition: opacity 300ms ease-in-out;
+}
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+.ReactModal__Overlay--before-close {
+  opacity:1;
+}
+/* Styling for the modal content */
+.ReactModal__Content {
+  position: fixed;
+  z-index: 888;
+  top:50% !important;
+  left: 40% !important;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius:15px !important;
+  outline: none;
+  max-width: 900px !important;
+  background: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  right: 0px !important;
+}
+
+/* Add your additional styling for modal content here */
+
+/* Example styling for the form inside the modal */
+.viewdata-popup {
+  text-align: center;
+  padding-top:100px;
+}
+.viewdata-popup button {
+  padding: 10px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+.viewdata-popup form {
+  margin-top: 20px;
+}
+
+.viewdata-popup label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.viewdata-popup input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+.viewdata-popup button {
+  padding: 10px;
+  color: #000;
+  background-color:transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.viewdata-popup button:last-child {
+  margin-right: 0;
+}
+.fast_track + label .add_remove_label::before {
+  content: 'Add';
+}
+.fast_track:checked + label .add_remove_label::before {
+  content: 'Remove';
+}
+
+.fast_track_theory_bottom{
+  display: block;
+}
+.fast_track:checked + label +.fast_track_theory_bottom{
+  display: none;
+}
+/* .order-details table th{
+  background:#dcdcdc;
+  color:#000;
+} */
+
+
+
+
+@media only screen and (max-width: 600px) {
+.sidbarcustom {
+  position: fixed;
+  top: auto;
+  bottom: 0px;
+  width: 100% !important;
+} 
+.sidbarcustom img{
+    display:none;
+}
+.sidbarcustom h1{
+  display:none;
+}
+.sidbarcustom .theory-test {
+  display:none;
+}
+.sidbarcustom .course-title {
+  display:none;
+}
+.sidbarcustom .pkg-item {
+  display:none;
+}
+.sidbarcustom hr {
+  display:none;
+}
+.ReactModal__Content {
+  left: 50% !important;
+  width: 90%;
+}
+}
+
+.css-ob1t9r-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked {
+  color: #d31e32;
+  
+}
+
+.css-ob1t9r-MuiButtonBase-root-MuiSwitch-switchBase.Mui-checked+.MuiSwitch-track {
+  background-color: #d31e32;
+  font-size: x-large;
+}
+
+input[type="time"] {
+  position: relative;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: block;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: transparent;
+}
+input#session-date::-webkit-calendar-picker-indicator{
+  display:block;
+  top:0;
+  left:0;
+  background: #0000;
+  position:absolute;
+  transform: scale(12)
+}
+
+.css-bo5c3t.Mui-checked {
+  color: #D31E32;
+}
+
+.css-bo5c3t{
+  color: #D31E32;
+}
+
