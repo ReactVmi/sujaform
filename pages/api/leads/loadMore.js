@@ -5,21 +5,35 @@ export default async function GET(req, res) {
   let pageNo = req.query.page ? parseInt(req.query.page) : 0;
   let Limit = req.query.limit ? parseInt(req.query.limit) : 5;
   let skip = pageNo * Limit;
-  console.log("Load More",pageNo, Limit, skip);
+  console.log("Load More", pageNo, Limit, skip);
 
   try {
     await connectionSuja();
 
-    const totalCount = await Lead.countDocuments({ del: 0 });
+    // Count the documents that match the criteria
+    const totalCount = await Lead.countDocuments({
+      del: 0,
+      $or: [
+        { 'step2.dr_course_type': 'guaranteed_pass' },
+        { 'step2.dr_course_type': 'speedster' }
+      ]
+    });
 
-    const leads = await Lead.find({ del: 0 })
+    // Find the documents that match the criteria
+    const leads = await Lead.find({
+      del: 0,
+      $or: [
+        { 'step2.dr_course_type': 'guaranteed_pass' },
+        { 'step2.dr_course_type': 'speedster' }
+      ]
+    })
       .limit(Limit)
       .skip(skip)
       .sort({ createdAt: -1 })
       .populate("user")
       .exec();
 
-    // Send the response once with all the data
+    // Send the response with all the data
     res.json({
       totalCount,
       totalPages: Math.ceil(totalCount / Limit),

@@ -4,18 +4,28 @@ const { default: Lead } = require("@/database/models/Lead");
 export default async function POST(req, res) {
   const { orderId } = req.body;
   try {
-   
     await connectionSuja();
     // Check if orderId is provided
     if (!orderId) {
       return res.status(400).json({ error: "orderId is required" });
     }
-    const result = await Lead.findOne({ _id: orderId,  del:0 });
-    console.log("RESULT ORDER ID:",result);
-    // Check if order with the given orderId exists
+
+    const result = await Lead.findOne({
+      _id: orderId,
+      del: 0,
+      $or: [
+        { 'step2.dr_course_type': 'guaranteed_pass' },
+        { 'step2.dr_course_type': 'speedster' }
+      ]
+    });
+
+    console.log("RESULT ORDER ID:", result);
+
+    // Check if order with the given orderId exists and matches the filter criteria
     if (!result) {
-       return res.status(400).json({ error: "Orderid not found" });
+      return res.status(400).json({ error: "OrderId not found or does not match filter criteria" });
     }
+
     res.status(200).json({ filterData: result });
     
   } catch (error) {
