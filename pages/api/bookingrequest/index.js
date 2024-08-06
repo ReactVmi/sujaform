@@ -3,7 +3,7 @@ import Lead from "@/database/models/Lead";
 
 export default async function GET(req, res) {
   let pageNo = req.query.page ? req.query.page : 0;
-  let limit = req.query.limit ? req.query.limit : 5;
+  let limit = req.query.limit ? req.query.limit : 6;
   let skip = pageNo * limit;
   console.log(pageNo, limit, skip);
 
@@ -15,13 +15,14 @@ export default async function GET(req, res) {
       .skip(skip)
       .sort({ createdAt: -1 })
       .populate("user");
-
+      console.log("booking api",leads)
     if (leads.length > 0) {
       const filteredLeads = leads.filter(
-        lead => lead.step2.dr_course_type === 'regular' || lead.step2.dr_course_type === 'crash'
+        lead => lead.step2.dr_course_type == 'regular' || lead.step2.dr_course_type == 'crash'
       );
-
+      
       if (filteredLeads.length > 0) {
+       
         return res.json(filteredLeads);
       }
     }
