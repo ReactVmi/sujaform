@@ -106,7 +106,7 @@ const Index = () => {
     try {
       const result = await Swal.fire({
         title: "Are you sure?",
-        text: "You will not be able to recover this lead!",
+        text: "",
         icon: "warning",
         showCancelButton: true,
         confirmButtonColor: "#d33",
