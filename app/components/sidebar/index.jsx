@@ -149,7 +149,7 @@ const Sidebar = ({ open, onClose }) => {
                     ? "text-navy-700"
                     : "text-gray-800"}`}
                 >
-                  Booking Request
+                  Booking Requests 
                 </p>
               </li>
               {router.pathname === "/admin/bookingrequest" &&

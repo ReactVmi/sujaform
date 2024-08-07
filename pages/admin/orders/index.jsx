@@ -395,7 +395,7 @@ const Index = () => {
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
-                          Id
+                          ID
                         </div>
                       </th>
                       <th
@@ -585,7 +585,7 @@ const Index = () => {
                           >
                             <p className="text-sm font-bold text-navy-700 ">
                               {moment(data.createdAt).format(
-                                "YYYY-MM-DD HH:mm:ss A"
+                                "DD-MM-YYYY HH:mm A"
                               )}
                             </p>
                           </td>
@@ -806,7 +806,7 @@ const Index = () => {
                 <div className="overflow-y-auto">
                   <div className="orderCustomerDetails md:px-5 md:py-2 p-4 pb-3">
                     <div className="flex justify-between ">
-                      <div className="">
+                      <div className="w-1/3">
                         <h3 className="md:text-xl text-sm font-bold mb-2">
                           Customer Details
                         </h3>
@@ -818,7 +818,7 @@ const Index = () => {
                           </span>
                         </h4>
                       </div>
-                      <div className="text-start">
+                      <div className="w-1/3 pl-5">
                         <span className="font-bold md:text-base text-sm text-start ">
                           <span className="">
                             {" "}
@@ -830,7 +830,7 @@ const Index = () => {
                             <span className="font-normal text-start">
                               {/* {console.log("createdAt:", viewLead.createdAt)} */}
                               {moment(viewLead.createdAt).format(
-                                "YYYY-MM-DD HH:mm:ss A"
+                                "DD-MM-YYYY HH:mm A"
                               )}
                             </span>{" "}
                           </span>

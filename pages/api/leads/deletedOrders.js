@@ -19,6 +19,7 @@ export default async function GET(req, res) {
       .catch(err => {
         console.log(err);
       });
+      
     res.send(leads);
     console.log("LEADS INDEX API");
   } catch (error) {

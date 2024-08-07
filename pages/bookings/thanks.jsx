@@ -31,7 +31,7 @@ const thankyou = () => {
                 <FaCheckCircle className="text-green-400 text-9xl" />
               </div>
               <h1 className="text-black font-bold lg:text-5xl text-3xl text-center">
-                Booking Request Submitted
+                Booking Requests Submitted
               </h1>
               <p className="text-center lg:my-10 md:pb-0 pb-3 my-4 md:text-xl text-lg text-dark font-medium">
                 Thank you for booking with us.

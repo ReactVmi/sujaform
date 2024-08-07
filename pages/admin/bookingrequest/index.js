@@ -395,7 +395,7 @@ const Index = () => {
                 >
                   <thead>
                     <tr role="row bg-gray-500">
-                      <th
+                      {/* <th
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
@@ -405,7 +405,7 @@ const Index = () => {
                         <div className="text-sm font-bold tracking-wide text-gray-800">
                           Id
                         </div>
-                      </th>
+                      </th> */}
                       <th
                         colSpan={1}
                         role="columnheader"
@@ -501,22 +501,22 @@ const Index = () => {
                     {leadsData && leadsData.length > 0 ? (
                       leadsData.map((data) => (
                         <tr key={data._id}>
-                          <td
+                          {/* <td
                             role="cell"
                             className="pt-[14px] pb-[16px] sm:text-[14px]"
                           >
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2"> */}
                               {/* <input
                             type="checkbox"
                             className="defaultCheckbox relative flex h-[20px] min-h-[20px] w-[20px] min-w-[20px] appearance-none items-center justify-center rounded-md border border-gray-300 text-white/0 outline-none transition duration-[0.2s]
                           checked:border-none checked:text-white hover:cursor-pointer dark:border-white/10 checked:bg-brand-500 dark:checked:bg-brand-400 undefined"
                             name="weekly"
                           /> */}
-                              <p className="text-sm font-bold text-gray-900 ">
+                              {/* <p className="text-sm font-bold text-gray-900 ">
                                 #{data._id}
                               </p>
                             </div>
-                          </td>
+                          </td> */}
                           <td
                             role="cell"
                             className="pt-[14px] pb-[16px] sm:text-[14px]"
@@ -586,7 +586,7 @@ const Index = () => {
                           >
                             <p className="text-sm font-bold text-navy-700 ">
                               {moment(data.createdAt).format(
-                                "YYYY-MM-DD HH:mm:ss A"
+                                "DD-MM-YYYY HH:mm A"
                               )}
                             </p>
                           </td>
@@ -807,7 +807,7 @@ const Index = () => {
                 <div className="overflow-y-auto">
                   <div className="orderCustomerDetails md:px-5 md:py-2 p-4 pb-3">
                     <div className="flex justify-between ">
-                      <div className="">
+                      <div className="w-1/3">
                         <h3 className="md:text-xl text-sm font-bold mb-2">
                           Customer Details
                         </h3>
@@ -819,8 +819,8 @@ const Index = () => {
                           </span>
                         </h4>
                       </div>
-                      <div className="text-start">
-                        <span className="font-bold md:text-base text-sm text-start ">
+                      <div className="w-1/3 pl-5">
+                        <span className="font-bold md:text-base text-sm ">
                           <span className="">
                             {" "}
                             <span className="md:text-xl text-sm font-bold mb-2">
@@ -831,7 +831,7 @@ const Index = () => {
                             <span className="font-normal text-start">
                               {/* {console.log("createdAt:", viewLead.createdAt)} */}
                               {moment(viewLead.createdAt).format(
-                                "YYYY-MM-DD HH:mm:ss A"
+                                "DD-MM-YYYY HH:mm A"
                               )}
                             </span>{" "}
                           </span>

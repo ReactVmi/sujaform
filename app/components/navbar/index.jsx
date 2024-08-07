@@ -46,7 +46,7 @@ const Navbar = (props) => {
     }
 
     if (lastPath === "bookingrequest") {
-      return "Booking Request";
+      return "Booking Requests";
     }
 
     if (userRole === "admin") {
