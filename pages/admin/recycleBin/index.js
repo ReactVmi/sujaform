@@ -352,7 +352,7 @@ const Index = () => {
                         </tr>
                       ))
                     ) : (
-                      <h1 className="text-xl text-gray-800 mt-3">No Data</h1>
+                      <h1 className="text-xl text-gray-800 mt-3">No results found</h1>
                     )}
                   </tbody>
                 </table>

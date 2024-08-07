@@ -132,6 +132,30 @@ const Sidebar = ({ open, onClose }) => {
                 <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
             </div>
           </Link>
+          <Link href="/admin/bookingrequest">
+            <div className="relative mb-3 flex hover:cursor-pointer">
+              <li className="my-[3px] flex cursor-pointer items-center px-8">
+                <span
+                  className={`font-bold dark:text-white ${router.pathname ===
+                  "/admin/bookingrequest"
+                    ? "text-red-500 border-b-red-500"
+                    : "text-gray-600"}`}
+                >
+                  <TbBrandBooking className="text-2xl"/>
+                </span>
+                <p
+                  className={`leading-1 flex ms-4 font-bold dark:text-white ${router.pathname ===
+                  `/admin/bookingrequest`
+                    ? "text-navy-700"
+                    : "text-gray-800"}`}
+                >
+                  Booking Request
+                </p>
+              </li>
+              {router.pathname === "/admin/bookingrequest" &&
+                <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
+            </div>
+          </Link>
           <Link href="/admin/users">
             <div className="relative mb-3 flex hover:cursor-pointer">
               <li className="my-[3px] flex cursor-pointer items-center px-8">
@@ -230,30 +254,7 @@ const Sidebar = ({ open, onClose }) => {
                 <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
             </div>
           </Link>
-          <Link href="/admin/bookingrequest">
-            <div className="relative mb-3 flex hover:cursor-pointer">
-              <li className="my-[3px] flex cursor-pointer items-center px-8">
-                <span
-                  className={`font-bold dark:text-white ${router.pathname ===
-                  "/admin/bookingrequest"
-                    ? "text-red-500 border-b-red-500"
-                    : "text-gray-600"}`}
-                >
-                  <TbBrandBooking className="text-2xl"/>
-                </span>
-                <p
-                  className={`leading-1 flex ms-4 font-bold dark:text-white ${router.pathname ===
-                  `/admin/bookingrequest`
-                    ? "text-navy-700"
-                    : "text-gray-800"}`}
-                >
-                  Booking Request
-                </p>
-              </li>
-              {router.pathname === "/admin/bookingrequest" &&
-                <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
-            </div>
-          </Link>
+         
         </ul>}
       {userRole === "customer" &&
         <ul className="mb-auto pt-1">

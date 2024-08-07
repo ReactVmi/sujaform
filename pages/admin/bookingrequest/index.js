@@ -622,7 +622,7 @@ const Index = () => {
                       ))
                     ) : (
                       <h1 className="text-xl text-gray-800 mt-3">
-                        No Data Found
+                      No results found
                       </h1>
                     )}
                   </tbody>
@@ -959,13 +959,14 @@ const Index = () => {
                                       viewLead.step2.dr_course_price[courseKey]
                                         .value
                                     }
+                                    &nbsp;
                                     {
                                       viewLead.step2.dr_course_price[courseKey]
                                         .variant
                                     }{" "}
                                     -{" "}
                                     <span className="capitalize">
-                                      {viewLead.step2.dr_type}
+                                      ({viewLead.step2.dr_type})
                                     </span>{" "}
                                     {viewLead.step6 && (viewLead.step6.payment === "Full" || viewLead.step6.payment === "Deposit") && viewLead.step6.payment }
                                   </span>
