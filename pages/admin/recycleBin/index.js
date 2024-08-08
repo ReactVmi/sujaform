@@ -157,7 +157,7 @@ const Index = () => {
       <div className="relative top-5 right-0 text-end me-4">
         <button
           onClick={handleDeleteAll}
-          className="text-red-600 mb-10 border-gray-300 border-[2px] py-2 px-3 rounded-lg font-semibold"
+          className="text-red-600 mb-10 border-[#D32F2F] border-[2px] py-2 px-3 rounded-lg "
         >
           Empty Trash
         </button>
@@ -173,16 +173,22 @@ const Index = () => {
         </div>
       ) : (
         <>
-        <Box sx={{ minWidth: 200 }} className="ms-4 text-white my-4 border-red-400">
-          <FormControl className="w-1/6">
-          <InputLabel id="demo-simple-select-label">Filter</InputLabel>
-            <Select className="text-black" onChange={handleFilterChange} id="demo-simple-select"  labelId="demo-simple-select-label" label="Filter">
-              
-              <MenuItem value="booking-request">Booking Request</MenuItem>
-              <MenuItem value="orders">Orders</MenuItem>
-            </Select>
-            </FormControl>
-            </Box>
+        <Box sx={{ minWidth: 120}} className="ms-4 text-white my-4  ">
+  <FormControl className="w-1/12 border-red-400 border-2" error>
+    <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+    <Select 
+      className="text-black" 
+      onChange={handleFilterChange} 
+      id="demo-simple-select"  
+      labelId="demo-simple-select-label" 
+      label="Filter"
+    >
+      <MenuItem value="booking-request">Booking Request</MenuItem>
+      <MenuItem value="orders">Orders</MenuItem>
+    </Select>
+  </FormControl>
+</Box>
+
           <div className="p-2 my-3 flex items-center justify-center bg-black flex-col w-full">
           
             <div className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 w-full h-full sm:overflow-auto">

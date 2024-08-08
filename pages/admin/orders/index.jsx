@@ -353,7 +353,7 @@ const Index = () => {
                   
                 }}
               >
-     <span className="font-bold text-red-700"><GrPowerReset className="text-xl cursor-pointer"/></span>
+     <span className="font-bold text-[#F23B3C]"><MdChangeCircle  className="text-3xl cursor-pointer"/></span>
      
 
 
