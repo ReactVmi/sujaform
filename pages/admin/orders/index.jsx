@@ -306,10 +306,10 @@ const Index = () => {
         </div>
       ) : (
         <>
-          <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap items-center">
+          <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap items-center flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row md:gap-0 lg:gap-0 xl:gap-0 gap-2">
           <Link href="/admin/recycleBin">
-            <div className="relative flex hover:cursor-pointer bg-[#F13C3D] ms-4 text-white rounded-sm py-2">
-              <li className="my-[3px] flex cursor-pointer items-center px-8">
+            <div className="relative flex hover:cursor-pointer bg-[#F13C3D] ms-2 text-white rounded-sm py-2">
+              <li className="my-[3px] flex cursor-pointer items-center px-8 ">
                 
                 <span
                   className={`font-bold text-white ${router.pathname ===
@@ -342,7 +342,7 @@ const Index = () => {
                 placeholderText="End date"
               />
               <button
-                className="font-bold md:ms-2 text-red-500"
+                className="font-bold md:ms-2 text-red-500 hidden md:block sm:block lg:block xl:block"
                 onClick={() => {
                   setPage(0);
                   setOrderId("");
