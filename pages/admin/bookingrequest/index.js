@@ -16,16 +16,19 @@ import axios from "axios";
 import { AiOutlineSearch } from "react-icons/ai";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaRegTrashAlt } from "react-icons/fa";
 import { IoCloseCircle } from "react-icons/io5";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 const Index = () => {
   const override = css`
     display: block;
     margin: 0 auto;
     border-color: red;
   `;
-
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [load, setLoad] = useState(false);
   const [Toggle, setToggle] = useState(false);
@@ -290,7 +293,7 @@ const Index = () => {
 
   return (
     <Layout>
-    <div>
+      <div>
         <Head>
         <title>Orders</title>
         </Head>
@@ -306,7 +309,25 @@ const Index = () => {
         </div>
       ) : (
         <>
-          <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap">
+          <div className="flex md:mt-10 mt-5 justify-between flex-wrap">
+          <Link href="/admin/recycleBin">
+            <div className="relative mb-3 flex hover:cursor-pointer bg-red-500 ms-4 text-white rounded-sm py-2">
+              <li className="my-[3px] flex cursor-pointer items-center px-8">
+                
+                <span
+                  className={`font-bold text-white ${router.pathname ===
+                  "/admin/recycleBin"
+                    ? "text-red-500 border-b-red-500"
+                    : "text-gray-600"}`}
+                >
+                  <FaRegTrashAlt  className="h-5 w-6"></FaRegTrashAlt>
+                </span>
+                
+              </li>
+              {router.pathname === "/admin/recycleBin" &&
+                <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
+            </div>
+          </Link>
            {/* Date Filter */}
 
             {/* <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col">

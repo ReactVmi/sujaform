@@ -1,4 +1,5 @@
 import Layout from "@/app/components/Layout";
+import { MdChangeCircle } from "react-icons/md";
 import { useEffect, useState } from "react";
 import { AiFillPlusCircle, AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Modal from "react-modal";
@@ -16,9 +17,11 @@ import axios from "axios";
 import { AiOutlineSearch } from "react-icons/ai";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { FaCalendar } from "react-icons/fa";
+import { FaCalendar, FaRegTrashAlt } from "react-icons/fa";
 import { IoCloseCircle } from "react-icons/io5";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
 const Index = () => {
   const override = css`
     display: block;
@@ -26,6 +29,7 @@ const Index = () => {
     border-color: red;
   `;
 
+  const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [load, setLoad] = useState(false);
   const [Toggle, setToggle] = useState(false);
@@ -302,8 +306,26 @@ const Index = () => {
         </div>
       ) : (
         <>
-          <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap">
-            <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col">
+          <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap items-center">
+          <Link href="/admin/recycleBin">
+            <div className="relative flex hover:cursor-pointer bg-[#F13C3D] ms-4 text-white rounded-sm py-2">
+              <li className="my-[3px] flex cursor-pointer items-center px-8">
+                
+                <span
+                  className={`font-bold text-white ${router.pathname ===
+                  "/admin/recycleBin"
+                    ? "text-red-500 border-b-red-500"
+                    : "text-gray-600"}`}
+                >
+                  <FaRegTrashAlt  className="h-5 w-6"></FaRegTrashAlt>
+                </span>
+                
+              </li>
+              {router.pathname === "/admin/recycleBin" &&
+                <div className="absolute top-px h-9 w-1 rounded-lg bg-[#F13C3D] end-0 dark:bg-brand-400" />}
+            </div>
+          </Link>
+            <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col items-center">
               <DatePicker
                 showIcon
                 selected={startDate}
@@ -320,7 +342,7 @@ const Index = () => {
                 placeholderText="End date"
               />
               <button
-                className="md:ms-2 px-2 py-[10px] rounded-md bg-[#B91C1C] text-white"
+                className="font-bold md:ms-2 text-red-500"
                 onClick={() => {
                   setPage(0);
                   setOrderId("");
@@ -331,7 +353,10 @@ const Index = () => {
                   
                 }}
               >
-                Reset
+     <span className="font-bold text-red-700"><GrPowerReset className="text-xl cursor-pointer"/></span>
+     
+
+
               </button>
             </div>
             <div className="flex justify-between mt-2 sm:mt-0 ">

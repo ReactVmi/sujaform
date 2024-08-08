@@ -15,6 +15,7 @@ import { PropagateLoader } from "react-spinners";
 import axios from "axios";
 import { TbRestore } from "react-icons/tb";
 import Head from "next/head";
+import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 
 const Index = () => {
   const override = css`
@@ -28,6 +29,7 @@ const Index = () => {
   const [viewLead, setViewLead] = useState(null);
   const [SecondToggle, setSecondToggle] = useState(false);
   const [leadsData, setLeadsData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
   const [selectedLead, setSelectedLead] = useState();
   const [formData, setFormData] = useState({
     step1: {
@@ -44,6 +46,7 @@ const Index = () => {
       amount: selectedLead?.step6?.amount
     }
   });
+  const [filterType, setFilterType] = useState(""); // New state for dropdown
 
   const handleLeadsData = async () => {
     try {
@@ -51,6 +54,7 @@ const Index = () => {
       const responseData = await response.json();
       setLoading(true);
       setLeadsData(responseData);
+      setFilteredData(responseData); // Initialize filtered data
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -95,7 +99,6 @@ const Index = () => {
       setLoading(true);
       const result = await axios.delete("/api/leads/deleteAll");
       if (result.status === 200) {
-        // console.log("All Data Deleted");
         await handleLeadsData();
       }
     } catch (error) {
@@ -114,7 +117,6 @@ const Index = () => {
       setLoading(true);
       const result = await axios.post(`/api/leads/softDelete?leadId=${leadId}`);
       if (result.status === 200) {
-        // console.log("leads Restore");
         await handleLeadsData();
       }
     } catch (error) {
@@ -123,6 +125,27 @@ const Index = () => {
       setLoading(false);
     }
   };
+
+  const handleFilterChange = (event) => {
+    const selectedValue = event.target.value;
+    setFilterType(selectedValue);
+  };
+
+  useEffect(() => {
+    if (filterType) {
+      const filtered = leadsData.filter((data) => {
+        if (filterType === "booking-request") {
+          return ["regular", "crash"].includes(data.step2.dr_course_type);
+        } else if (filterType === "orders") {
+          return ["guaranteed_pass", "speedster"].includes(data.step2.dr_course_type);
+        }
+        return true; // Show all if no filter
+      });
+      setFilteredData(filtered);
+    } else {
+      setFilteredData(leadsData); // Show all if no filter
+    }
+  }, [filterType, leadsData]);
 
   return (
     <Layout>
@@ -150,7 +173,18 @@ const Index = () => {
         </div>
       ) : (
         <>
-          <div className="w-full p-2 my-3  flex items-center justify-center text-white bg-black flex-col">
+        <Box sx={{ minWidth: 200 }} className="ms-4 text-white my-4 border-red-400">
+          <FormControl className="w-1/6">
+          <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+            <Select className="text-black" onChange={handleFilterChange} id="demo-simple-select"  labelId="demo-simple-select-label" label="Filter">
+              
+              <MenuItem value="booking-request">Booking Request</MenuItem>
+              <MenuItem value="orders">Orders</MenuItem>
+            </Select>
+            </FormControl>
+            </Box>
+          <div className="p-2 my-3 flex items-center justify-center bg-black flex-col w-full">
+          
             <div className="!z-5 relative flex flex-col rounded-[20px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 w-full h-full sm:overflow-auto">
               <div className="overflow-x-scroll xl:overflow-x-hidden p-10">
                 <table
@@ -166,7 +200,7 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
@@ -177,19 +211,18 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
                           Email
                         </div>
                       </th>
-
                       <th
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
@@ -211,7 +244,7 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
@@ -222,14 +255,13 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
                           Date / Time
                         </div>
                       </th>
-
                       <th
                         colSpan={1}
                         role="columnheader"
@@ -237,27 +269,21 @@ const Index = () => {
                         className="border-b border-gray-200  pb-5 text-start"
                         style={{ cursor: "pointer" }}
                       >
-                        <div className="text-end text-sm font-bold  text-gray-800">
+                        <div className="text-end text-sm font-bold text-gray-800">
                           Actions
                         </div>
                       </th>
                     </tr>
                   </thead>
                   <tbody role="rowgroup">
-                    {leadsData.length > 0 ? (
-                      leadsData.map((data) => (
+                    {filteredData.length > 0 ? (
+                      filteredData.map((data) => (
                         <tr key={data._id}>
                           <td
                             role="cell"
                             className="pt-[14px] pb-[16px] sm:text-[14px]"
                           >
                             <div className="flex items-center gap-2">
-                              {/* <input
-                            type="checkbox"
-                            className="defaultCheckbox relative flex h-[20px] min-h-[20px] w-[20px] min-w-[20px] appearance-none items-center justify-center rounded-md border border-gray-300 text-white/0 outline-none transition duration-[0.2s]
-                          checked:border-none checked:text-white hover:cursor-pointer dark:border-white/10 checked:bg-brand-500 dark:checked:bg-brand-400 undefined"
-                            name="weekly"
-                          /> */}
                               <p className="text-sm font-bold text-gray-900 ">
                                 {data.step4.firstName}
                               </p>
@@ -273,14 +299,6 @@ const Index = () => {
                               </p>
                             </div>
                           </td>
-                          {/* <td
-                        role="cell"
-                        className="pt-[14px] pb-[16px] sm:text-[14px]"
-                      >
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {data.step6.couponcode}
-                        </p>
-                      </td> */}
                           <td
                             role="cell"
                             className="pt-[14px] pb-[16px] sm:text-[14px]"
@@ -291,7 +309,7 @@ const Index = () => {
                           </td>
                           <td
                             role="cell"
-                            className="pt-[14px] pb-[16px] sm:text-[14px] "
+                            className="pt-[14px] pb-[16px] sm:text-[14px]"
                           >
                             <p className="text-sm font-bold text-navy-700 ">
                               {data.step1.postal_code}
@@ -325,7 +343,6 @@ const Index = () => {
                               {moment(data.createdAt).format(
                                 "YYYY-MM-DD HH:mm:ss A"
                               )}
-                              {/* {console.log("DATE>>>>>>>", data.createdAt)} */}
                             </p>
                           </td>
                           <td

@@ -230,7 +230,7 @@ const Sidebar = ({ open, onClose }) => {
                 <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
             </div>
           </Link>
-          <Link href="/admin/recycleBin">
+          {/* <Link href="/admin/recycleBin">
             <div className="relative mb-3 flex hover:cursor-pointer">
               <li className="my-[3px] flex cursor-pointer items-center px-8">
                 <span
@@ -253,7 +253,7 @@ const Sidebar = ({ open, onClose }) => {
               {router.pathname === "/admin/recycleBin" &&
                 <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
             </div>
-          </Link>
+          </Link> */}
          
         </ul>}
       {userRole === "customer" &&

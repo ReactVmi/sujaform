@@ -3,7 +3,7 @@ import Lead from "@/database/models/Lead";
 
 export default async function GET(req, res) {
   let pageNo = req.query.page ? parseInt(req.query.page) : 0;
-  let Limit = req.query.limit ? parseInt(req.query.limit) : 5;
+  let Limit = req.query.limit ? parseInt(req.query.limit) : 10;
   let skip = pageNo * Limit;
   console.log("Load More", pageNo, Limit, skip);
 
