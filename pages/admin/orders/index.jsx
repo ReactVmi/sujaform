@@ -354,10 +354,7 @@ const Index = () => {
                 }}
               >
      <span className="font-bold text-[#F23B3C]"><MdChangeCircle  className="text-3xl cursor-pointer"/></span>
-     
-
-
-              </button>
+                   </button>
             </div>
             <div className="flex justify-between mt-2 sm:mt-0 ">
               {/* <div className="text-gray-400 mr-4 my-2">
