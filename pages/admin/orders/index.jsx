@@ -33,7 +33,7 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
   const [load, setLoad] = useState(false);
   const [Toggle, setToggle] = useState(false);
-  const [viewLead, setViewLead] = useState(null);
+  const [viewLead, setViewLead] = useState([]);
   const [SecondToggle, setSecondToggle] = useState(false);
   const [leadsData, setLeadsData] = useState([]);
   const [page, setPage] = useState(0);
