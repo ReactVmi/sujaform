@@ -1116,7 +1116,7 @@ const Index = () => {
                             <span className="block mt-2 ms-1">Total</span>
                           </td>
                           <td className="px-6 py-4 font-semibold text-sm">
-                            £{viewLead.step6?.amount ? viewLead.step6?.amount : 0}
+                            {viewLead.step6?.amount ? viewLead.step6?.amount : 0}
                           </td>
                         </tr>
                       </tbody>
