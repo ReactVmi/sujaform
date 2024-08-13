@@ -17,6 +17,10 @@ const leadsSchema = new mongoose.Schema(
     stripe: { type: Object },
     del: { type: Boolean, default: 0 }
   },
+  { 
+    _id: false, // Disable default _id field
+    timestamps: true
+  },
   { timestamps: true }
 );
 
