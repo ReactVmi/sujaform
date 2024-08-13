@@ -16,7 +16,7 @@ export async function sendMail(subject, toEmail, otpText) {
 
  // console.log(transport);
   let mailOptions = {
-    from: process.env.SMTPUSERNAME,
+    from: process.env.SMPTPFROMEMAIL,
     to: toEmail,
     subject: subject,
     text: otpText
