@@ -43,7 +43,7 @@ const handler = async (req, res) => {
 
         try {
           // Send the email
-          await sendMail("Suja Booking Receipt" , `sujadrivingschool.official@gmail.com,${step4.email}`, emailContent);
+          await sendMail("Suja Booking Receipt" , `${step4.email}`, emailContent);
 
           // Log a success message
           console.log("Email sent successfully");
