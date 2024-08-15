@@ -175,16 +175,16 @@ const Index = () => {
         <>
         <Box sx={{ minWidth: 120}} className="ms-4 text-white my-4  ">
   <FormControl className="md:w-1/12 lg:w-1/12 xl:w-1/12 2xl:w-1/12 sm:w-1/12 w-full border-red-400 border-2" error>
-    <InputLabel id="demo-simple-select-label">Filter</InputLabel>
+    <InputLabel id="demo-simple-select-label">Select Lead</InputLabel>
     <Select 
-      className="text-black" 
+      className="text-red" 
       onChange={handleFilterChange} 
       id="demo-simple-select"  
       labelId="demo-simple-select-label" 
-      label="Filter"
+      label="Select Lead"
     >
-      <MenuItem value="booking-request">Booking Request</MenuItem>
-      <MenuItem value="orders">Orders</MenuItem>
+      <MenuItem value="booking-request" className="text-red">Booking Request</MenuItem>
+      <MenuItem value="orders" className="text-red">Orders</MenuItem>
     </Select>
   </FormControl>
 </Box>

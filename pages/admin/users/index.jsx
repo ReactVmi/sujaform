@@ -132,7 +132,7 @@ const Index = () => {
               <div className="overflow-x-scroll xl:overflow-x-hidden p-10">
                 <table
                   role="table"
-                  className="w-full table-auto"
+                  className="w-full table-auto 2xl:min-w-full min-w-[1200px]"
                   variant="simple"
                   color="gray-500"
                   mb="24px"
