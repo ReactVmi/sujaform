@@ -824,7 +824,7 @@ const student = () => {
                                     <ErrorMessage
                                       name={`${day.toLowerCase()}StartTime`}
                                       component="p"
-                                      className="text-red-500 text-[12px] absolute bottom-0"
+                                      className="text-red-500 md:text-[12px] absolute bottom-0 top-[66px] text-[9px]"
                                     />
                                   </div>
                                   <div className="flex flex-col w-10 text-sm text-center justify-center">
@@ -847,7 +847,8 @@ const student = () => {
                                     <ErrorMessage
                                       name={`${day.toLowerCase()}EndTime`}
                                       component="p"
-                                      className="text-red-500 text-[12px] absolute bottom-0"
+                                    
+                                      className="text-red-500 md:text-[12px] absolute bottom-0 top-[66px] text-[9px]"
                                     />
                                   </div>
                                 </div>

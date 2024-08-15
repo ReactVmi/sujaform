@@ -713,7 +713,7 @@ showCoursePricing(values.dr_course_type)
                   <p className="font-bold md:text-2xl text-xl">{option.hour}</p>
                   <p className="font-semibold text-xs">{option.variant}</p>
                   <div className="display-block">£{option.full}</div>
-                  <div className='text-[12px] font-normal py-2 leading-4'> <p>{option.desc}</p></div>
+                  <div className='text-[12px] font-normal py-2 leading-4 hidden md:block'> <p>{option.desc}</p></div>
                </div>
             </label>          
          </div>
