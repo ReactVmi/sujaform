@@ -409,7 +409,7 @@ const Index = () => {
               <div className="overflow-x-scroll xl:overflow-x-hidden p-10">
                 <table
                   role="table"
-                  className="w-full table-auto"
+                  className="w-full table-auto 2xl:min-w-full min-w-[1200px]"
                   variant="simple"
                   color="gray-500"
                   mb="24px"
@@ -464,7 +464,7 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start "
+                        className="border-b border-gray-200  pb-5 text-start px-5 md:px-0 lg:px-0 xl:px-0 sm:px-0 2xl:px-0"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
@@ -567,7 +567,7 @@ const Index = () => {
                        
                           <td
                             role="cell"
-                            className="pt-[14px] pb-[16px] sm:text-[14px]"
+                            className="pt-[14px] pb-[16px] sm:text-[14px] md:px-0 lg:px-0 xl:px-0 sm:px-0 2xl:px-0 px-5"
                           >
                             <p className="text-sm font-bold text-navy-700 ">
                               {data.step4.phone_number}

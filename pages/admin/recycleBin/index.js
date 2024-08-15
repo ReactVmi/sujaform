@@ -174,7 +174,7 @@ const Index = () => {
       ) : (
         <>
         <Box sx={{ minWidth: 120}} className="ms-4 text-white my-4  ">
-  <FormControl className="w-1/12 border-red-400 border-2" error>
+  <FormControl className="md:w-1/12 lg:w-1/12 xl:w-1/12 2xl:w-1/12 sm:w-1/12 w-full border-red-400 border-2" error>
     <InputLabel id="demo-simple-select-label">Filter</InputLabel>
     <Select 
       className="text-black" 
@@ -195,7 +195,7 @@ const Index = () => {
               <div className="overflow-x-scroll xl:overflow-x-hidden p-10">
                 <table
                   role="table"
-                  className="w-full table-auto"
+                  className="w-full table-auto 2xl:min-w-full min-w-[1200px]"
                   variant="simple"
                   color="gray-500"
                   mb="24px"
@@ -228,7 +228,7 @@ const Index = () => {
                         colSpan={1}
                         role="columnheader"
                         title="Toggle SortBy"
-                        className="border-b border-gray-200  pb-5 text-start"
+                        className="border-b border-gray-200 pb-5 text-start px-5 md:px-0 lg:px-0 xl:px-0 sm:px-0 2xl:px-0"
                         style={{ cursor: "pointer" }}
                       >
                         <div className="text-sm font-bold tracking-wide text-gray-800">
@@ -297,7 +297,7 @@ const Index = () => {
                           </td>
                           <td
                             role="cell"
-                            className="pt-[14px] pb-[16px] sm:text-[14px] w-[18%]"
+                            className="pt-[14px] pb-[16px] sm:text-[14px] w-[18%] md:px-0 lg:px-0 xl:px-0 sm:px-0 2xl:px-0 px-5"
                           >
                             <div className="flex items-center">
                               <p className="text-sm font-bold text-navy-700 ">
