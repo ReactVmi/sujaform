@@ -61,10 +61,10 @@ const Index = () => {
     const userCall = async () => {
       try {
         // Make the API call using axios
-        const response = await axios.get('/api/user');
+        const response = await axios.get('/api/admin');
         // Access the data directly from the response object
         const userAPI = response.data;
-        console.log(userAPI);
+        console.log("All user api....",userAPI);
       } catch (error) {
         // Handle errors here
         console.error('Error fetching user data:', error);
