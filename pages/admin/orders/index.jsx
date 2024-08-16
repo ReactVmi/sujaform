@@ -57,13 +57,22 @@ const Index = () => {
     }
   });
 
-  useEffect(()=>{
-    const userCall = async()=>{
-      const userAPI = axios.get('/api/user');
-      console.log(userAPI);
+  useEffect(() => {
+    const userCall = async () => {
+      try {
+        // Make the API call using axios
+        const response = await axios.get('/api/user/index');
+        // Access the data directly from the response object
+        const userAPI = response.data;
+        console.log(userAPI);
+      } catch (error) {
+        // Handle errors here
+        console.error('Error fetching user data:', error);
       }
-  userCall();
-},[])
+    };
+
+    userCall();
+  }, []);
 
 
   const handleEdit = async (lead) => {
