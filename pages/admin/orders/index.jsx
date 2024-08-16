@@ -29,6 +29,7 @@ const Index = () => {
     border-color: red;
   `;
 
+ 
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [load, setLoad] = useState(false);
@@ -55,6 +56,15 @@ const Index = () => {
       amount: selectedLead?.step6?.amount
     }
   });
+
+  useEffect(()=>{
+    const userCall = async()=>{
+      const userAPI = axios.get('/api/user');
+      console.log(userAPI);
+      }
+  userCall();
+},[])
+
 
   const handleEdit = async (lead) => {
     setFormData(lead);
