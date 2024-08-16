@@ -270,7 +270,7 @@ const Index = () => {
                             className="pt-[14px] pb-[16px] sm:text-[14px] w-[16%]"
                           >
                             <div className="flex items-center">
-                              <p className="text-sm font-bold text-navy-700">
+                              <p className="text-sm font-bold text-navy-700 pr-6 md:px-3">
                                 {data.step4.email}
                               </p>
                             </div>
@@ -495,13 +495,13 @@ const Index = () => {
                   </h4>
                 </div>
                 <div className="overflow-y-auto">
-                  <div className="orderCustomerDetails p-7 pb-3">
+                  <div className="orderCustomerDetails md:p-7 lg:p-7 xl:p-7 2xl:p-7 p-4 pb-3">
                     <div className="flex justify-between items-center items-middle">
                       <div className="">
-                        <h3 className="text-xl font-bold mb-2">
+                        <h3 className="text-xl font-bold">
                           Customer Details
                         </h3>
-                        <h4 className="font-semibold mb-3">
+                        <h4 className="font-semibold">
                           Postal Code
                           <span className="bg-teal-200 ms-3 py-1 px-3 font-semibold  text-xs rounded-full">
                             {" "}
@@ -526,19 +526,19 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    <div className="grid grid-cols-2 mt-5">
+                    <div className="flex mt-5 justify-between">
                       <div>
                         <h4 className="font-bold text-lg">Full Name: </h4>
-                        <span className="font-semibold">
+                        <span className="font-semibold text-sm">
                           {viewLead.step4.title}. {viewLead.step4.firstName}{" "}
                           {viewLead.step4.surname}
                         </span>
                         <h4 className="font-bold text-lg pt-3">Email: </h4>
-                        <span className="font-semibold">
+                        <span className="font-semibold text-sm">
                           {viewLead.step4.email}
                         </span>
                       </div>
-                      <div>
+                      <div className="md:mr-[35px] lg:mr-[35px] xl:mr-[35px] 2xl:mr-[35px]">
                         <h4 className="font-bold text-lg">Mobile Number: </h4>
                         <span className="font-semibold text-sm">
                           {viewLead.step4.phone_number}
@@ -546,14 +546,14 @@ const Index = () => {
                         <h4 className="font-bold text-lg pt-3">
                           Course Speed:{" "}
                         </h4>
-                        <span className=" md:text-base text-sm">
+                        <span className=" text-xs md:text-sm">
                             {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
                           </span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="order-details p-4 pb-8 relative overflow-x-auto shadow-md sm:rounded-lg">
+                  <div className="order-details md:p-4 lg:p-4 xl:p-4 2xl:p-4 pb-8 relative overflow-x-auto shadow-md sm:rounded-lg">
                     <table className="w-full text-sm text-left border rtl:text-right">
                       <tbody>
                         <tr className="border  bg-gray-200">
@@ -575,7 +575,8 @@ const Index = () => {
                             scope="row"
                             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                           >
-                            <span className="bg-amber-200  py-1 px-3 font-semibold  text-xs rounded-full">
+                            <span className="bg-amber-200  py-1 px-3 font-semibold  text-xs rounded-full
+                            capitalize">
                             {viewLead.step2.dr_course_type}
                             </span>
                             {viewLead.step2.dr_course_price ? (
