@@ -61,7 +61,7 @@ const Index = () => {
     const userCall = async () => {
       try {
         // Make the API call using axios
-        const response = await axios.get('/api/user/index');
+        const response = await axios.get('/api/user');
         // Access the data directly from the response object
         const userAPI = response.data;
         console.log(userAPI);
