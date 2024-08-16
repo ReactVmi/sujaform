@@ -488,7 +488,7 @@ const tests = () => {
                   <button
                     type="submit"
                     onClick={enableLoader}
-                    className="bg-theme-red-color hover:bg-red-900 w-full hover:text-white rounded-md mb-5 px-12 
+                    className="bg-theme-red-color hover:bg-red-900 w-full hover:text-white rounded-md md:mb-5 mb-10 px-12 
                   py-4 text-md font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ... focus-visible:outline-indigo-600"
                   >
                     <span className="flex items-center justify-center">

@@ -395,7 +395,7 @@ showCoursePricing(values.dr_course_type)
                                  />
                            </svg>
                         </div>
-                        <div className="">
+                        <div className=" md:text-sm text-[14px]">
                            <div className=" false">2-4 hours per week  </div>
                         </div>
                      </div>
@@ -465,7 +465,7 @@ showCoursePricing(values.dr_course_type)
                                  />
                            </svg>
                         </div>
-                        <div className="">
+                        <div className=" md:text-sm text-[14px]">
                            <div className=" false">Up to 6-8 hours per week</div>
                         </div>
                      </div>
@@ -503,7 +503,7 @@ showCoursePricing(values.dr_course_type)
                <label htmlFor="dr_cc_type" className="w-full flex items-center text-left  bg-emerald-100	py-4 px-5 rounded-lg border font-semibold text-secondary cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-1 hover:bg-pmfLightGreen hover:bg-opacity-50 transition-all  ">
                <div className=" w-full flex justify-between items-center">
                <div className="flex items-center">
-                  <div className="pr-5 false">
+                  <div className="md:pr-5 pr-3 false">
                      <svg
                         width={24}
                         height={24}
@@ -524,7 +524,7 @@ showCoursePricing(values.dr_course_type)
                            />
                      </svg>
                   </div>
-                  <div className="">
+                  <div className=" md:text-sm text-[14px]">
                      <div className=" false">Up to 6 hours per day over 4 consecutive days or over consecutive weekends</div>
                   </div>
                </div>
@@ -589,7 +589,7 @@ showCoursePricing(values.dr_course_type)
                               />
                         </svg>
                      </div>
-                     <div className="">
+                     <div className=" md:text-sm text-[14px]">
                         <div className=" false">Unlimited number of hours until I pass!</div>
                      </div>
                   </div>
@@ -615,7 +615,7 @@ showCoursePricing(values.dr_course_type)
         variants={variants}
         transition= {{ delay: 0, duration: 0.3, ease: "easeInOut" }}        
         >
-      <div className=" flex justify-between items-center md:mt-20 md:mt-16 mt-10 gap-x-5">
+      <div className=" flex justify-between items-center md:mt-16 mt-10 gap-x-5">
          <h1 className=" text-[21px] leading-snug font-semibold">
             { course.name }
          </h1>
