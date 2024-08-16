@@ -66,7 +66,7 @@ export default function Formnav() {
     animate={{ opacity: (router.pathname !== "/bookings" && router.pathname !== "/bookings/summary" && router.pathname !== "/bookings/payment") ? 1 : 0, marginRight: (router.pathname !== "/bookings" && router.pathname !== "/bookings/summary" && router.pathname !== "/bookings/payment") ? 0 : 0 }}
     exit={{ opacity: router.pathname === "/bookings" ? 0 : 1, marginRight: router.pathname === "/bookings" ? 0 : -360 }}
     transition={{ delay: 0.1, duration: 0.5 }}
-    className="h-50 w-full flex justify-center items-center"
+    className="h-50 w-full flex md:justify-center items-center"
   >
   
         <div className="flex flex-col py-5 text-white w-full max-w-[260px]">
