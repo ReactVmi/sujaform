@@ -317,7 +317,7 @@ const Index = () => {
                           >
                             <p className="text-sm font-bold text-navy-700">
                               {moment(data.createdAt).format(
-                                "YYYY-MM-DD HH:mm:ss A"
+                                "DD-MM-YYYY HH:mm A"
                               )}
                             </p>
                           </td>
@@ -509,7 +509,7 @@ const Index = () => {
                           </span>
                         </h4>
                       </div>
-                      <div className="">
+                      <div className="md:mr-[24px] lg:mr-[24px] xl:mr-[24px] 2xl:mr-[24px] mr-[25px]">
                         <span className="">
                           {" "}
                           <span className="text-xl font-bold mb-2">
@@ -519,7 +519,7 @@ const Index = () => {
                           <br />
                           <span className="font-normal">
                             {moment(viewLead.createdAt).format(
-                              "YYYY-MM-DD HH:mm:ss A"
+                              "DD-MM-YYYY HH:mm A"
                             )}
                           </span>{" "}
                         </span>
