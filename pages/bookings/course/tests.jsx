@@ -110,8 +110,7 @@ const tests = () => {
                       </h1>
                       <p className="text-current	font-regular text-[17px] mt-2">
                         We offer a fast track practical test service in Sale,
-                        West Didsbury or Cheetham Hill within 6-10 weeks for
-                        £175, significantly reducing the typical DVSA wait time
+                        West Didsbury or Cheetham Hill within 6-10 weeks, significantly reducing the typical DVSA wait time
                         of 6-8 months. If you would like to get this booked in,
                         please contact us directly on 03333 2222 33.
                         Alternatively, drop us an email on

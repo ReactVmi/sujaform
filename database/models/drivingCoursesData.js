@@ -114,20 +114,20 @@ export const manual = {
       "1_installment": {
         value: "First",
         variant: "Instalment",
-        full: 3500,
+        full: 1500,
         deposit: 1500
       },
       "2_installment": {
         value: "Second",
         variant: "Instalment",
         full: 1000,
-        deposit: 500
+        deposit: 1000
       },
       "3_installment": {
         value: "Third",
         variant: "Instalment",
         full: 1000,
-        deposit: 500
+        deposit: 1000
       }
     },
     hint: `It's always best to book a few extra hours to make sure you're test ready. If you've had 10 to 15 hours of driving lessons in the past, a 30 to 40-hour course would be perfect to bring your total to the 45 hours recommended by the DVSA. <br> Bear in mind that 2-3 hours of every course are reserved for the practical test and preparation beforehand.`,
@@ -252,20 +252,20 @@ export const auto = {
       "1_installment": {
         value: "First",
         variant: "Instalment",
-        full: 3500,
+        full: 1500,
         deposit: 1500
       },
       "2_installment": {
         value: "Second",
         variant: "Instalment",
         full: 1000,
-        deposit: 500
+        deposit: 1000
       },
       "3_installment": {
         value: "Third",
         variant: "Instalment",
         full: 1000,
-        deposit: 500
+        deposit: 1000
       }
     },
     hint: `It's always best to book a few extra hours to make sure you're test ready. If you've had 10 to 15 hours of driving lessons in the past, a 30 to 40-hour course would be perfect to bring your total to the 45 hours recommended by the DVSA. <br> Bear in mind that 2-3 hours of every course are reserved for the practical test and preparation beforehand.`,

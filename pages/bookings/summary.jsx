@@ -336,7 +336,7 @@ Continue to Payment Method
 </span>
 </button>
 
-        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+        {/* <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
           <div className="w-full p-6 border rounded-md">
             <div className="flex flex-col">
               <div className="flex items-center  mb-4 space-x-4">
@@ -457,7 +457,7 @@ Continue to Payment Method
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
 

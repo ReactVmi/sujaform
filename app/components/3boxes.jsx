@@ -29,7 +29,7 @@ export default function ThreeBoxes() {
   return (
     <div className="mx-auto w-full lg:px-0 px-4 lg:max-w-[48%] md:pb-20 pb-5">
       <div className="md:mt-6 mt-0 grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-        <button
+        {/* <button
           onClick={() => toggleFAQ("button1")}
           className="w-full flex items-center text-left bg-pmfGray py-4 px-5 rounded-lg font-semibold text-secondary cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-1 bg-gray-200 hover:bg-gray-300 hover:bg-opacity-50 transition-all font-semibold w-full bg-opacity-30 border-transparent px-0 cursor-pointer hover:bg-opacity-50 hover:bg-slate-200 group"
           id="toggleButton1"
@@ -55,7 +55,7 @@ export default function ThreeBoxes() {
                 course.
               </motion.p>  
           </div>
-        </button>
+        </button> */}
         <button
         onClick={() => toggleFAQ("button2")}
           className="w-full flex items-center text-left bg-pmfGray py-4 px-5 rounded-lg  font-semibold text-secondary
@@ -72,7 +72,7 @@ export default function ThreeBoxes() {
           </div>
           <div className="mx-4 mt-2">
             <p>Learn from the best</p>
-              <motion.p
+              {/* <motion.p
               className="overflow-y-hidden text-secondary leading-snug text-opacity-70 font-normal text-[15px] mt-2"
               id="detail-paragraph"
               animate={openState["button2"] ? "open" : "closed"}
@@ -83,7 +83,7 @@ export default function ThreeBoxes() {
                 your money back if we can't fast-track your test within 30 days
                 of booking or connect you with an instructor in time for your
                 course.
-              </motion.p>
+              </motion.p> */}
           </div>
         </button>
         <button
@@ -102,7 +102,7 @@ export default function ThreeBoxes() {
           </div>
           <div className="mx-4 mt-2">
             <p>Deposit Option</p>
-              <motion.p
+              {/* <motion.p
                 className="overflow-y-hidden text-secondary leading-snug text-opacity-70 font-normal text-[15px] mt-2"
                 id="detail-paragraph"
                 animate={openState["button3"] ? "open" : "closed"}
@@ -113,10 +113,10 @@ export default function ThreeBoxes() {
                   your money back if we can't fast-track your test within 30 days
                   of booking or connect you with an instructor in time for your
                   course.
-                </motion.p>
+                </motion.p> */}
           </div>
         </button>
-        <button
+        {/* <button
           onClick={() => toggleFAQ("button4")}
           className="w-full flex items-center text-left bg-pmfGray py-4 px-5 rounded-lg  font-semibold text-secondary
      cursor-pointer outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-1
@@ -147,7 +147,7 @@ export default function ThreeBoxes() {
                   course.
                 </motion.p>
           </div>
-        </button>
+        </button> */}
         <button
           onClick={() => toggleFAQ("button5")}
           className="w-full flex items-center text-left bg-pmfGray py-4 px-5 rounded-lg font-semibold text-secondary
@@ -163,7 +163,7 @@ export default function ThreeBoxes() {
           </div>
           <div className="mx-4">
             <p>Flexible payment options</p>
-              <motion.p
+              {/* <motion.p
                 className="overflow-y-hidden text-secondary leading-snug text-opacity-70 font-normal text-[15px] mt-2"
                 id="detail-paragraph"
                 animate={openState["button5"] ? "open" : "closed"}
@@ -174,7 +174,7 @@ export default function ThreeBoxes() {
                   your money back if we can't fast-track your test within 30 days
                   of booking or connect you with an instructor in time for your
                   course.
-                </motion.p>
+                </motion.p> */}
           </div>
         </button>
         <button
@@ -196,7 +196,7 @@ export default function ThreeBoxes() {
           </div>
           <div className="mx-4">
             <p>Support at every step </p>
-              <motion.p
+              {/* <motion.p
                 className="overflow-y-hidden text-secondary leading-snug text-opacity-70 font-normal text-[15px] mt-2"
                 id="detail-paragraph"
                 animate={openState["button6"] ? "open" : "closed"}
@@ -207,7 +207,7 @@ export default function ThreeBoxes() {
                   your money back if we can't fast-track your test within 30 days
                   of booking or connect you with an instructor in time for your
                   course.
-                </motion.p>
+                </motion.p> */}
           </div>
         </button>
       </div>
