@@ -109,12 +109,7 @@ const tests = () => {
                         Would you like a fast track practical test?
                       </h1>
                       <p className="text-current	font-regular text-[17px] mt-2">
-                        We offer a fast track practical test service in Sale,
-                        West Didsbury or Cheetham Hill within 6-10 weeks, significantly reducing the typical DVSA wait time
-                        of 6-8 months. If you would like to get this booked in,
-                        please contact us directly on 03333 2222 33.
-                        Alternatively, drop us an email on
-                        support@sujadrivingschool.co.uk
+                      We have a fast track practical test service in Sale, West Didsbury or Cheetham Hill within 6-10 weeks, significantly reducing the typical DVSA wait time of 6-8 months. You may add in your booking to show your interest in the service, however for pricing and test centre, please contact us directly on 03333 2222 33. Alternatively, drop us an email on support@sujadrivingschool.co.uk
                       </p>
                       {/* <p className="text-neutral-400	 font-medium text-[17px] mt-2">
                         All courses include a fast-track practical test, but you can remove it below if you've booked your own.
