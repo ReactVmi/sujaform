@@ -115,10 +115,17 @@ const index = () => {
    useEffect(() => {
       // Ensure this runs only on the client
       const data = localStorage.getItem("formData");
-      console.log(data, "localData");
-      setLocalData(data);
-   }, []);
-   // console.log(localData,"localData");
+      if (data) {
+        try {
+          const parsedData = JSON.parse(data); // Parse the JSON string
+          console.log(parsedData, "localData");
+          setLocalData(parsedData); // Update state with parsed data
+        } catch (error) {
+          console.error("Error parsing localStorage data:", error);
+        }
+      }
+    }, []);
+   console.log(localData,"localData");
    
    function enableLoader() {
 

@@ -899,16 +899,19 @@ const Index = () => {
                             {viewLead.step4.phone_number}
                           </span>
                         </div>
-                        {viewLead?.step2?.dr_course_type === "crash" || viewLead?.step2?.dr_course_type === "crash" ? ("")
+                        {viewLead?.step2?.dr_course_type === "regular" || viewLead?.step2?.dr_course_type === "crash" ? null : (
+                          <>
+                            <div>
+                              <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
+                                Course Speed:{" "}
+                              </h4>
+                              <span className=" md:text-base text-sm">
+                                {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
+                              </span>
+                            </div>
+                          </>
+                        )}
 
-                          : (<>
-
-                            <h4 className="font-bold text-lg pt-3">
-                              Course Speed:{" "}
-                            </h4>
-                            <span className=" text-xs md:text-sm">
-                              {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
-                            </span></>)}
                         {/* <div>
                           <span className="font-regular  text-sm text-start rounded-full font-semibold">
                             <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
