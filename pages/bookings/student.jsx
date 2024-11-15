@@ -189,7 +189,7 @@ const student = () => {
   }, []);
 
 
-  
+  console.log("info outside",info?.step2?.dr_course_type);
 
   const router = useRouter();
   const [changedData, setChangedData] = useState(formdata);
@@ -330,7 +330,13 @@ const student = () => {
           };
           formDatas.step1.postal_code = formDatas.step4.postal_code;
           localStorage.setItem("formData", JSON.stringify(formDatas));
-          router.push("/bookings/availability");
+          if(info?.step2?.dr_course_type === 'regular'){
+              console.log("info",info);
+              router.push("/bookings/thanks")
+          }
+          else{
+            router.push("/bookings/availability");
+          }
         }}
       >
         {({ values, setFieldValue, handleChange, handleBlur }) => (

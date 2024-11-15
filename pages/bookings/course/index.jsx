@@ -671,7 +671,7 @@ showCoursePricing(values.dr_course_type)
             </svg>
          </div>
       </div>
-      <div className="flex justify-center md:space-x-5 space-x-3 course-pricehidebox">
+      <div className="flex justify-center md:space-x-5 space-x-3 course-pricehidebox ">
 
 
          {/* /////////////////// */}
