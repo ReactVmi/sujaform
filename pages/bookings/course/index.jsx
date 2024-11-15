@@ -113,22 +113,32 @@ const index = () => {
    const [localData, setLocalData] = useState(null);
 
    useEffect(() => {
-      // Ensure this runs only on the client
       const data = localStorage.getItem("formData");
       if (data) {
-        try {
-          const parsedData = JSON.parse(data); // Parse the JSON string
-          console.log(parsedData, "localData");
-          setLocalData(parsedData); // Update state with parsed data
-        } catch (error) {
-          console.error("Error parsing localStorage data:", error);
-        }
+         try {
+            const parsedData = JSON.parse(data);
+            setLocalData(parsedData);
+         } catch (error) {
+            console.error("Error parsing localStorage data:", error);
+         }
       }
-    }, []);
-   console.log(localData,"localData");
-   
+   }, []);
+
    function enableLoader() {
 
+      if (changedData?.step2?.dr_course_type === "regular" || changedData?.step2?.dr_course_type === "crash") {
+
+         if (localData?.step5) {
+            const updatedData = { ...localData };
+            delete updatedData.step5; 
+
+            // Update the state
+            setLocalData(updatedData);
+
+            // Update localStorage
+            localStorage.setItem("formData", JSON.stringify(updatedData));
+         }
+      }
       setLoader(checkAndSetLoader(changedData));
    }
 

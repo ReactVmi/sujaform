@@ -277,7 +277,7 @@ useEffect(() => {
               className="rounded-full mt-3 py-3 text-sm ms-3 px-8  text-lg uppercase  font-semibold text-white shadow-sm
      bg-red-700 hover:bg-red-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Save Profile
+              Save Profile 
             </button>
           </div>
         </form>

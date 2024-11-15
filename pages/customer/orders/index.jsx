@@ -308,9 +308,17 @@ const Index = () => {
                                           .value
                                       }
                                     </div>
+                                    
                                   )
                                 )}
-                                <div>/ {data.step5?.intensiveCourse && data.step5.intensiveCourse}</div>
+
+                                {data?.step2?.dr_course_type === "regular" || data?.step2?.dr_course_type === "crash" ? null : (
+                                  <>
+                                    <div>/ {data.step5?.intensiveCourse && data.step5.intensiveCourse}</div>
+                                  </>
+                                )}
+
+
                               </div>
                             </p>
                           </td>
