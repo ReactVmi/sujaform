@@ -32,7 +32,7 @@ export default async (req, res) => {
         .status(401)
         .json({
           success: false,
-          message: "Account not Found , PLease Sign Up",
+          message: "Account doesn't exist, please sign up.",
         });
     }
 
