@@ -29,7 +29,7 @@ const Index = () => {
     border-color: red;
   `;
 
-
+ 
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [load, setLoad] = useState(false);
@@ -64,7 +64,7 @@ const Index = () => {
         const response = await axios.get('/api/admin');
         // Access the data directly from the response object
         const userAPI = response.data;
-        console.log("All user api....", userAPI);
+        console.log("All user api....",userAPI);
       } catch (error) {
         // Handle errors here
         console.error('Error fetching user data:', error);
@@ -111,7 +111,7 @@ const Index = () => {
 
   const handleLeadsData = async () => {
     try {
-
+     
       const response = await fetch("/api/leads/");
       const responseData = await response.json();
 
@@ -134,7 +134,7 @@ const Index = () => {
       const responseData = await response.json();
       // console.log("handleLoadMore",responseData);
       setLoad(true);
-      setTotal((prev) => responseData.totalCount);
+      setTotal((prev)=>responseData.totalCount);
       // console.log("Total Count",total);
       setLeadsData((prevData) => [...prevData, ...responseData.leads]);
       setLoad(false);
@@ -231,10 +231,10 @@ const Index = () => {
   };
 
 
-  useEffect(() => {
+  useEffect(()=>{
     handleuserData();
     handleLeadsData();
-  }, [])
+  },[])
 
 
   useEffect(() => {
@@ -253,22 +253,22 @@ const Index = () => {
   }, [startDate, endDate]);
 
   useEffect(() => {
-    if (page > 0) { handleLoadMore(); }
-
+    if(page > 0){handleLoadMore();}
+    
   }, [page]);
 
-  useEffect(() => {
-    const fetchTotal = async () => {
-      const result = await fetch('/api/leads/loadMore/');
-      let fetchTotalLead = await result.json();
-      // console.log("Total Leads Count",fetchTotalLead.totalCount);
-      setCount(fetchTotalLead.totalCount)
+  useEffect(()=>{
+    const fetchTotal = async()=>{
+        const result = await fetch('/api/leads/loadMore/');
+        let fetchTotalLead = await result.json();
+        // console.log("Total Leads Count",fetchTotalLead.totalCount);
+        setCount(fetchTotalLead.totalCount)
     }
     fetchTotal();
-  }, [])
+  },[])
+ 
 
-
-
+ 
   const [crossIconState, setcrossIconState] = useState(false);
 
   const formatTime = (time) => {
@@ -284,11 +284,11 @@ const Index = () => {
     };
     return date.toLocaleTimeString([], options);
   };
-
+  
   const formatAvailability = (startTime, endTime) => {
     return `${formatTime(startTime)}-${formatTime(endTime)}`;
   };
-
+  
   const getAvailabilityData = (viewLead) => {
     const days = [
       { day: 'Mon', start: viewLead?.step4?.mondayStartTime, end: viewLead?.step4.mondayEndTime },
@@ -299,19 +299,19 @@ const Index = () => {
       { day: 'Sat', start: viewLead?.step4?.saturdayStartTime, end: viewLead?.step4.saturdayEndTime },
       { day: 'Sun', start: viewLead?.step4?.sundayStartTime, end: viewLead?.step4.sundayEndTime },
     ];
-
+  
     // Filter out days without both start and end times
     return days.filter(day => day.start && day.end);
   };
-
+                        
   const availabilityData = getAvailabilityData(viewLead);
-  console.log("availabilityData", availabilityData)
+  console.log("availabilityData",availabilityData)
 
   return (
     <Layout>
-      <div>
+    <div>
         <Head>
-          <title>Orders</title>
+        <title>Orders</title>
         </Head>
       </div>
       {loading ? (
@@ -326,24 +326,24 @@ const Index = () => {
       ) : (
         <>
           <div className="flex md:mt-10 mt-5 ms-2 justify-between flex-wrap items-center flex-col md:flex-row lg:flex-row xl:flex-row 2xl:flex-row md:gap-0 lg:gap-0 xl:gap-0 gap-2">
-            <Link href="/admin/recycleBin">
-              <div className="relative flex hover:cursor-pointer bg-[#F13C3D] ms-2 text-white rounded-sm py-2">
-                <li className="my-[3px] flex cursor-pointer items-center px-8 ">
-
-                  <span
-                    className={`font-bold text-white ${router.pathname ===
-                      "/admin/recycleBin"
-                      ? "text-red-500 border-b-red-500"
-                      : "text-gray-600"}`}
-                  >
-                    <FaRegTrashAlt className="h-5 w-6"></FaRegTrashAlt>
-                  </span>
-
-                </li>
-                {router.pathname === "/admin/recycleBin" &&
-                  <div className="absolute top-px h-9 w-1 rounded-lg bg-[#F13C3D] end-0 dark:bg-brand-400" />}
-              </div>
-            </Link>
+          <Link href="/admin/recycleBin">
+            <div className="relative flex hover:cursor-pointer bg-[#F13C3D] ms-2 text-white rounded-sm py-2">
+              <li className="my-[3px] flex cursor-pointer items-center px-8 ">
+                
+                <span
+                  className={`font-bold text-white ${router.pathname ===
+                  "/admin/recycleBin"
+                    ? "text-red-500 border-b-red-500"
+                    : "text-gray-600"}`}
+                >
+                  <FaRegTrashAlt  className="h-5 w-6"></FaRegTrashAlt>
+                </span>
+                
+              </li>
+              {router.pathname === "/admin/recycleBin" &&
+                <div className="absolute top-px h-9 w-1 rounded-lg bg-[#F13C3D] end-0 dark:bg-brand-400" />}
+            </div>
+          </Link>
             <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col items-center">
               <DatePicker
                 showIcon
@@ -369,11 +369,11 @@ const Index = () => {
                   setendDate("");
                   setcrossIconState(false);
                   handleLeadsData();
-
+                  
                 }}
               >
-                <span className="font-bold text-[#F23B3C]"><MdChangeCircle className="text-3xl cursor-pointer" /></span>
-              </button>
+     <span className="font-bold text-[#F23B3C]"><MdChangeCircle  className="text-3xl cursor-pointer"/></span>
+                   </button>
             </div>
             <div className="flex justify-between mt-2 sm:mt-0 ">
               {/* <div className="text-gray-400 mr-4 my-2">
@@ -662,7 +662,7 @@ const Index = () => {
                       ))
                     ) : (
                       <h1 className="text-xl text-gray-800 mt-3">
-                        No results found
+                      No results found
                       </h1>
                     )}
                   </tbody>
@@ -680,13 +680,13 @@ const Index = () => {
               </div>
             </div> */}
             {leadsData && leadsData.length != total &&
-              (
-                <>
-                  <button className="bg-red-500 p-3 rounded-md mt-4" disabled={load} onClick={handleClickMore}>
-                    {load ? 'Loading...' : 'Load More'}
-                  </button>
-                </>
-              )
+            (
+              <>
+            <button className="bg-red-500 p-3 rounded-md mt-4" disabled={load} onClick={handleClickMore}>
+              {load ? 'Loading...' : 'Load More'}
+            </button>
+            </>
+            )
             }
             <Modal
               isOpen={Toggle}
@@ -742,15 +742,15 @@ const Index = () => {
                       value={formData?.step6 ? formData.step6.amount : '0'} // I have added Hard Code value it will be change to formData?.step6?.amount for normal functionality
                       type="text"
                       readOnly
-                    // onChange={(e) =>
-                    //   setFormData({
-                    //     ...formData,
-                    //     step6: {
-                    //       ...formData.step6,
-                    //       amount: e.target.value
-                    //     }
-                    //   })
-                    // }
+                      // onChange={(e) =>
+                      //   setFormData({
+                      //     ...formData,
+                      //     step6: {
+                      //       ...formData.step6,
+                      //       amount: e.target.value
+                      //     }
+                      //   })
+                      // }
                     />
                   </div>
                   <div className="flex flex-col md:w-1/2 w-full md:mr-3 mr-0">
@@ -918,16 +918,18 @@ const Index = () => {
                             {viewLead.step4.phone_number}
                           </span>
                         </div>
-                        {viewLead?.step2?.dr_course_type === "crash" || viewLead?.step2?.dr_course_type === "crash" ? ("")
-
-                          : (<>
-
-                            <h4 className="font-bold text-lg pt-3">
-                              Course Speed:{" "}
-                            </h4>
-                            <span className=" text-xs md:text-sm">
-                              {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
-                            </span></>)}
+                        {viewLead?.step2?.dr_course_type === "regular" || viewLead?.step2?.dr_course_type === "crash" ? null : (
+                          <>
+                            <div>
+                              <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
+                                Course Speed:{" "}
+                              </h4>
+                              <span className=" md:text-base text-sm">
+                                {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
+                              </span>
+                            </div>
+                          </>
+                        )}
                         <div>
                           <span className="font-regular  text-sm text-start rounded-full font-semibold">
                             <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
@@ -942,16 +944,16 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="grid md:grid-cols-3 grid-cols-2 pt-2">
-                      <div className=" ms-0 md:my-0 my-4">
-                        <h4 className="font-bold md:text-lg text-sm">
-                          Address
-                        </h4>
-                        <span className=" md:text-base text-sm">
-                          {viewLead.step4.addressLineOne + viewLead?.step4?.addressLineTwo}
-                        </span>
-                      </div>
-
-                      <div className="ms-0 md:my-0 my-4">
+                    <div className=" ms-0 md:my-0 my-4">
+                          <h4 className="font-bold md:text-lg text-sm">
+                            Address
+                          </h4>
+                          <span className=" md:text-base text-sm">
+                            {viewLead.step4.addressLineOne+viewLead?.step4?.addressLineTwo}
+                          </span>
+                        </div>
+                        
+                        <div className="ms-0 md:my-0 my-4">
                         <h4 className="font-bold md:text-lg text-sm">Availability</h4>
                         <div className="md:text-base text-sm">
                           {availabilityData.map(({ day, start, end }) => (
@@ -960,7 +962,7 @@ const Index = () => {
                             </div>
                           ))}
                         </div>
-                      </div>
+                       </div>
                     </div>
                   </div>
 
@@ -987,7 +989,7 @@ const Index = () => {
                             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                           >
                             <span className="bg-amber-200  py-1 px-3 font-semibold  text-xs rounded-full capitalize">
-                              {viewLead.step2.dr_course_type.replace('_', ' ')}
+                            {viewLead.step2.dr_course_type.replace('_', ' ')}
                             </span>
                             {viewLead.step2.dr_course_price ? (
                               <span className="block mt-2 ms-1">
@@ -1003,7 +1005,7 @@ const Index = () => {
                                     {
                                       viewLead.step2.dr_course_price[courseKey]
                                         .variant
-                                    }{" "}
+                                    }{" "} 
                                     -{" "}
                                     <span className="capitalize">
                                       ({viewLead.step2.dr_type})
@@ -1019,10 +1021,10 @@ const Index = () => {
                             )}
                           </td>
                           <td className="px-6 py-4 font-semibold text-sm">
-                            {/* FOR FULL PAYMENT */}
+                          {/* FOR FULL PAYMENT */}
                             {viewLead.step6?.payment === "Full" && (
                               <div>
-                                <span>{viewLead.step6?.amount}</span>
+                              <span>{viewLead.step6?.amount}</span>
                                 {/* {Object.keys(
                                   viewLead.step2.dr_course_price
                                 ).map((courseKey, index) => (
@@ -1039,7 +1041,7 @@ const Index = () => {
                             {/* FOR DEPOSIT PAYMENT */}
                             {viewLead.step6?.payment === "Deposit" && (
                               <div>
-                                <span>{viewLead.step6?.amount}</span>
+                              <span>{viewLead.step6?.amount}</span>
                                 {/* {Object.keys(
                                   viewLead.step2.dr_course_price
                                 ).map((courseKey, index) => (
@@ -1055,7 +1057,7 @@ const Index = () => {
                             )}
                           </td>
                         </tr>
-
+                      
                         {viewLead.step3.fast_track_practical != "" && (
                           <tr className="bg-white border-b  p-3 ">
                             <td
@@ -1066,11 +1068,11 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Practical Test (Fast Track Practical)
+                              Practical Test (Fast Track Practical)  
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
-                              {/* £0 */}
+                            {/* £0 */}
                             </td>
                           </tr>
                         )}
@@ -1084,12 +1086,12 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Theory Test  (Free Theory Subscription)
+                              Theory Test  (Free Theory Subscription)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
                               {/* £{viewLead.step3.fast_track_theory} */}
-
+                              
                             </td>
                           </tr>
                         )}
@@ -1103,11 +1105,11 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Theory Test  (I've already passed)
+                              Theory Test  (I've already passed) 
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
-                              {/* £{viewLead.step3.i_have_already} */}
+                              {/* £{viewLead.step3.i_have_already} */} 
                             </td>
                           </tr>
                         )}
@@ -1121,11 +1123,11 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                                Theory Test  {viewLead.step3.i_have_already ? "(I have Already Booked)" : ''}
+                              Theory Test  {viewLead.step3.i_have_already ? "(I have Already Booked)" : ''} 
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
-                              {/* £{viewLead.step3.i_have_already} */}
+                              {/* £{viewLead.step3.i_have_already} */} 
                             </td>
                           </tr>
                         )}
