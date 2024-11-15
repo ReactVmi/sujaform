@@ -948,6 +948,7 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="grid md:grid-cols-3 grid-cols-2 pt-2">
+<<<<<<< HEAD
                       <div className=" ms-0 md:my-0 my-4">
                         <h4 className="font-bold md:text-lg text-sm">
                           Address
@@ -958,6 +959,18 @@ const Index = () => {
                       </div>
 
                       <div className="ms-0 md:my-0 my-4">
+=======
+                    <div className=" ms-0 md:my-0 my-4">
+                          <h4 className="font-bold md:text-lg text-sm">
+                            Address
+                          </h4>
+                          <span className=" md:text-base text-sm">
+                            {viewLead?.step4?.addressLineOne} {viewLead?.step4?.addressLineTwo ? viewLead?.step4?.addressLineTwo : ''}
+                          </span>
+                        </div>
+                        
+                        <div className="ms-0 md:my-0 my-4">
+>>>>>>> 0bbc71fc935981d197a44dc54c75073e758029fb
                         <h4 className="font-bold md:text-lg text-sm">Availability</h4>
                         <div className="md:text-base text-sm">
                           {availabilityData.map(({ day, start, end }) => (
