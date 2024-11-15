@@ -279,6 +279,53 @@ const student = () => {
       setShowSuggestions(false);
     }
   };
+  const handlePaymentSuccess = async (paymentMethod) => {
+    
+    const userData = {
+      fname: changedData.step4.firstName,
+      lname: changedData.step4.surname,
+      postalcode: changedData.step1.postal_code,
+      email: changedData.step4.email,
+      password: changedData.step4.password,
+      phone: changedData.step4.phone_number
+    };
+      try {
+        const find = await axios.get(`/api/user/find/?email=${userData.email}`);
+        let user
+        if(find.data.success)
+        {
+          user = find.data.user
+        }
+        else
+        {
+          const userresponse = await axios.post("/api/user/post", userData);
+          user = await userresponse.data
+        }
+        const leadData = await {
+          user: user._id,
+          step1: changedData.step1,
+          step2: changedData.step2,
+          step3: changedData.step3,
+          step4: changedData.step4,
+          step5: changedData.step5,
+          step6: changedData.step6,
+          
+        }
+        const leadresponse = await axios.post("/api/leads/post", leadData);
+        const lead = await leadresponse.data
+        // console.log('leadData', lead);
+        await axios.post("/api/api_mailer", { formdata: lead });
+        const token = autoLogin(user)
+        if(token)
+        {
+          Cookies.set("token", token);
+        }
+      } catch (error) {
+        console.error(error);
+        console.log("Error");
+      }
+
+  };
 
   return (
     <div>
@@ -330,8 +377,9 @@ const student = () => {
           };
           formDatas.step1.postal_code = formDatas.step4.postal_code;
           localStorage.setItem("formData", JSON.stringify(formDatas));
-          if(info?.step2?.dr_course_type === 'regular'){
+          if(info?.step2?.dr_course_type === 'regular' || info?.step2?.dr_course_type === 'crash'){
               console.log("info",info);
+              handlePaymentSuccess();
               router.push("/bookings/thanks")
           }
           else{
