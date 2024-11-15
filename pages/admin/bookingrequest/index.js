@@ -91,7 +91,7 @@ const Index = () => {
 
   const handleLeadsData = async () => {
     try {
-     
+
       const response = await fetch("/api/bookingrequest/");
       const responseData = await response.json();
 
@@ -114,7 +114,7 @@ const Index = () => {
       const responseData = await response.json();
       // console.log("handleLoadMore",responseData);
       setLoad(true);
-      setTotal((prev)=>responseData.totalCount);
+      setTotal((prev) => responseData.totalCount);
       // console.log("Total Count",total);
       setLeadsData((prevData) => [...prevData, ...responseData.leads]);
       setLoad(false);
@@ -211,10 +211,10 @@ const Index = () => {
   };
 
 
-  useEffect(()=>{
+  useEffect(() => {
     handleuserData();
     handleLeadsData();
-  },[])
+  }, [])
 
 
   useEffect(() => {
@@ -233,22 +233,22 @@ const Index = () => {
   }, [startDate, endDate]);
 
   useEffect(() => {
-    if(page > 0){handleLoadMore();}
-    
+    if (page > 0) { handleLoadMore(); }
+
   }, [page]);
 
-  useEffect(()=>{
-    const fetchTotal = async()=>{
-        const result = await fetch('/api/bookingrequest/loadMore/');
-        let fetchTotalLead = await result.json();
-        // console.log("Total Leads Count",fetchTotalLead.totalCount);
-        setCount(fetchTotalLead.totalCount)
+  useEffect(() => {
+    const fetchTotal = async () => {
+      const result = await fetch('/api/bookingrequest/loadMore/');
+      let fetchTotalLead = await result.json();
+      // console.log("Total Leads Count",fetchTotalLead.totalCount);
+      setCount(fetchTotalLead.totalCount)
     }
     fetchTotal();
-  },[])
- 
+  }, [])
 
- 
+
+
   const [crossIconState, setcrossIconState] = useState(false);
 
   const formatTime = (time) => {
@@ -264,11 +264,11 @@ const Index = () => {
     };
     return date.toLocaleTimeString([], options);
   };
-  
+
   const formatAvailability = (startTime, endTime) => {
     return `${formatTime(startTime)}-${formatTime(endTime)}`;
   };
-  
+
   const getAvailabilityData = (viewLead) => {
     const days = [
       { day: 'Mon', start: viewLead?.step4?.mondayStartTime, end: viewLead?.step4.mondayEndTime },
@@ -279,15 +279,15 @@ const Index = () => {
       { day: 'Sat', start: viewLead?.step4?.saturdayStartTime, end: viewLead?.step4.saturdayEndTime },
       { day: 'Sun', start: viewLead?.step4?.sundayStartTime, end: viewLead?.step4.sundayEndTime },
     ];
-  
+
     // Filter out days without both start and end times
     return days.filter(day => day.start && day.end);
   };
-  
-  
-  
-  
-                        
+
+
+
+
+
   const availabilityData = getAvailabilityData(viewLead);
 
 
@@ -295,7 +295,7 @@ const Index = () => {
     <Layout>
       <div>
         <Head>
-        <title>Orders</title>
+          <title>Orders</title>
         </Head>
       </div>
       {loading ? (
@@ -310,25 +310,25 @@ const Index = () => {
       ) : (
         <>
           <div className="flex md:mt-10 mt-5 justify-between flex-wrap">
-          <Link href="/admin/recycleBin">
-            <div className="relative mb-3 flex hover:cursor-pointer bg-red-500 ms-4 text-white rounded-sm py-2">
-              <li className="my-[3px] flex cursor-pointer items-center px-8">
-                
-                <span
-                  className={`font-bold text-white ${router.pathname ===
-                  "/admin/recycleBin"
-                    ? "text-red-500 border-b-red-500"
-                    : "text-gray-600"}`}
-                >
-                  <FaRegTrashAlt  className="h-5 w-6"></FaRegTrashAlt>
-                </span>
-                
-              </li>
-              {router.pathname === "/admin/recycleBin" &&
-                <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
-            </div>
-          </Link>
-           {/* Date Filter */}
+            <Link href="/admin/recycleBin">
+              <div className="relative mb-3 flex hover:cursor-pointer bg-red-500 ms-4 text-white rounded-sm py-2">
+                <li className="my-[3px] flex cursor-pointer items-center px-8">
+
+                  <span
+                    className={`font-bold text-white ${router.pathname ===
+                      "/admin/recycleBin"
+                      ? "text-red-500 border-b-red-500"
+                      : "text-gray-600"}`}
+                  >
+                    <FaRegTrashAlt className="h-5 w-6"></FaRegTrashAlt>
+                  </span>
+
+                </li>
+                {router.pathname === "/admin/recycleBin" &&
+                  <div className="absolute top-px h-9 w-1 rounded-lg bg-red-700 end-0 dark:bg-brand-400" />}
+              </div>
+            </Link>
+            {/* Date Filter */}
 
             {/* <div className="text-start lg:ms-2 text-gray-400 relative datepicker-wrap flex gap-2 md:flex-row flex-col">
               <DatePicker
@@ -527,13 +527,13 @@ const Index = () => {
                             className="pt-[14px] pb-[16px] sm:text-[14px]"
                           >
                             <div className="flex items-center gap-2"> */}
-                              {/* <input
+                          {/* <input
                             type="checkbox"
                             className="defaultCheckbox relative flex h-[20px] min-h-[20px] w-[20px] min-w-[20px] appearance-none items-center justify-center rounded-md border border-gray-300 text-white/0 outline-none transition duration-[0.2s]
                           checked:border-none checked:text-white hover:cursor-pointer dark:border-white/10 checked:bg-brand-500 dark:checked:bg-brand-400 undefined"
                             name="weekly"
                           /> */}
-                              {/* <p className="text-sm font-bold text-gray-900 ">
+                          {/* <p className="text-sm font-bold text-gray-900 ">
                                 #{data._id}
                               </p>
                             </div>
@@ -564,7 +564,7 @@ const Index = () => {
                               </p>
                             </div>
                           </td>
-                       
+
                           <td
                             role="cell"
                             className="pt-[14px] pb-[16px] sm:text-[14px] md:px-0 lg:px-0 xl:px-0 sm:px-0 2xl:px-0 px-5"
@@ -643,7 +643,7 @@ const Index = () => {
                       ))
                     ) : (
                       <h1 className="text-xl text-gray-800 mt-3">
-                      No results found
+                        No results found
                       </h1>
                     )}
                   </tbody>
@@ -661,13 +661,13 @@ const Index = () => {
               </div>
             </div> */}
             {leadsData && leadsData.length != total &&
-            (
-              <>
-            <button className="bg-red-500 p-3 rounded-md mt-4" disabled={load} onClick={handleClickMore}>
-              {load ? 'Loading...' : 'Load More'}
-            </button>
-            </>
-            )
+              (
+                <>
+                  <button className="bg-red-500 p-3 rounded-md mt-4" disabled={load} onClick={handleClickMore}>
+                    {load ? 'Loading...' : 'Load More'}
+                  </button>
+                </>
+              )
             }
             <Modal
               isOpen={Toggle}
@@ -723,15 +723,15 @@ const Index = () => {
                       value={formData?.step6.amount}
                       type="text"
                       readOnly
-                      // onChange={(e) =>
-                      //   setFormData({
-                      //     ...formData,
-                      //     step6: {
-                      //       ...formData.step6,
-                      //       amount: e.target.value
-                      //     }
-                      //   })
-                      // }
+                    // onChange={(e) =>
+                    //   setFormData({
+                    //     ...formData,
+                    //     step6: {
+                    //       ...formData.step6,
+                    //       amount: e.target.value
+                    //     }
+                    //   })
+                    // }
                     />
                   </div>
                   <div className="flex flex-col md:w-1/2 w-full md:mr-3 mr-0">
@@ -899,14 +899,16 @@ const Index = () => {
                             {viewLead.step4.phone_number}
                           </span>
                         </div>
-                        <div>
-                          <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
-                            Course Speed:{" "}
-                          </h4>
-                          <span className=" md:text-base text-sm">
-                            {viewLead.step5?.intensiveCourse}
-                          </span>
-                        </div>
+                        {viewLead?.step2?.dr_course_type === "crash" || viewLead?.step2?.dr_course_type === "crash" ? ("")
+
+                          : (<>
+
+                            <h4 className="font-bold text-lg pt-3">
+                              Course Speed:{" "}
+                            </h4>
+                            <span className=" text-xs md:text-sm">
+                              {viewLead.step5?.intensiveCourse && viewLead.step5?.intensiveCourse}
+                            </span></>)}
                         {/* <div>
                           <span className="font-regular  text-sm text-start rounded-full font-semibold">
                             <h4 className="font-bold md:text-lg text-sm md:pt-3 pt-5">
@@ -921,16 +923,16 @@ const Index = () => {
                       </div>
                     </div>
                     <div className="grid md:grid-cols-3 grid-cols-2 pt-2">
-                    <div className=" ms-0 md:my-0 my-4">
-                          <h4 className="font-bold md:text-lg text-sm">
-                            Address
-                          </h4>
-                          <span className=" md:text-base text-sm">
-                            {viewLead.step4.addressLineOne+viewLead?.step4?.addressLineTwo}
-                          </span>
-                        </div>
-                        
-                        <div className="ms-0 md:my-0 my-4">
+                      <div className=" ms-0 md:my-0 my-4">
+                        <h4 className="font-bold md:text-lg text-sm">
+                          Address
+                        </h4>
+                        <span className=" md:text-base text-sm">
+                          {viewLead.step4.addressLineOne + viewLead?.step4?.addressLineTwo}
+                        </span>
+                      </div>
+
+                      <div className="ms-0 md:my-0 my-4">
                         <h4 className="font-bold md:text-lg text-sm">Availability</h4>
                         <div className="md:text-base text-sm">
                           {availabilityData.map(({ day, start, end }) => (
@@ -939,7 +941,7 @@ const Index = () => {
                             </div>
                           ))}
                         </div>
-                       </div>
+                      </div>
                     </div>
                   </div>
 
@@ -966,7 +968,7 @@ const Index = () => {
                             className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap "
                           >
                             <span className="bg-amber-200  py-1 px-3 font-semibold  text-xs rounded-full">
-                               {viewLead.step2.dr_course_type.charAt(0).toUpperCase() + viewLead.step2.dr_course_type.slice(1)}
+                              {viewLead.step2.dr_course_type.charAt(0).toUpperCase() + viewLead.step2.dr_course_type.slice(1)}
                             </span>
                             {console.log(viewLead)}
                             {viewLead.step2.dr_course_price ? (
@@ -989,7 +991,7 @@ const Index = () => {
                                     <span className="capitalize">
                                       ({viewLead.step2.dr_type})
                                     </span>{" "}
-                                    {viewLead.step6 && (viewLead.step6.payment === "Full" || viewLead.step6.payment === "Deposit") && viewLead.step6.payment }
+                                    {viewLead.step6 && (viewLead.step6.payment === "Full" || viewLead.step6.payment === "Deposit") && viewLead.step6.payment}
                                   </span>
                                 ))}
                               </span>
@@ -999,7 +1001,7 @@ const Index = () => {
                               </span>
                             )}
                           </td>
-                          
+
                         </tr>
                         {/* {console.log(viewLead)} */}
                         {viewLead.step3.fast_track_practical != "" && (
@@ -1012,7 +1014,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              Fast Track Practical (Practical Test)
+                                Fast Track Practical (Practical Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1030,7 +1032,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              Free Theory Subscription  (Theory Test)
+                                Free Theory Subscription  (Theory Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1048,7 +1050,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              I've already passed (Theory Test)
+                                I've already passed (Theory Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1066,7 +1068,7 @@ const Index = () => {
                                 Add-ons
                               </span>
                               <span className="block mt-2 ms-1">
-                              {viewLead.step3.i_have_already ? "I have Already Booked" : ''} (Theory Test) 
+                                {viewLead.step3.i_have_already ? "I have Already Booked" : ''} (Theory Test)
                               </span>
                             </td>
                             <td className="px-6 py-4 font-semibold text-sm">
@@ -1082,7 +1084,7 @@ const Index = () => {
                             <span className="block mt-2 ms-1">Total</span>
                           </td>
                           <td className="px-6 py-4 font-semibold text-sm">
-                          £ {viewLead.step6 ? viewLead.step6.amount : 0}
+                            £ {viewLead.step6 ? viewLead.step6.amount : 0}
                           </td>
                         </tr>
                       </tbody>

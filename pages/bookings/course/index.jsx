@@ -110,8 +110,18 @@ const index = () => {
       hour: course.course[key].value
    }));
 
+   const [localData, setLocalData] = useState(null);
 
+   useEffect(() => {
+      // Ensure this runs only on the client
+      const data = localStorage.getItem("formData");
+      console.log(data, "localData");
+      setLocalData(data);
+   }, []);
+   // console.log(localData,"localData");
+   
    function enableLoader() {
+
       setLoader(checkAndSetLoader(changedData));
    }
 
@@ -729,7 +739,7 @@ const index = () => {
                 hover:text-white mx-4 md:mx-0 rounded-md mb-5 px-12 py-4 text-md font-semibold text-white shadow-sm focus-visible:outline
                  focus-visible:outline-2 focus-visible:outline-offset-2 ... focus-visible:outline-indigo-600">
                               <span className="flex items-center justify-center">
-                                 Continue 
+                                 Continue
                                  <span className="ml-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                        <path d="M5 12h13M12 5l7 7-7 7"></path>
