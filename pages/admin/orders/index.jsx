@@ -949,7 +949,7 @@ const Index = () => {
                             Address
                           </h4>
                           <span className=" md:text-base text-sm">
-                            {viewLead.step4.addressLineOne+viewLead?.step4?.addressLineTwo}
+                            {viewLead?.step4?.addressLineOne} {viewLead?.step4?.addressLineTwo ? viewLead?.step4?.addressLineTwo : ''}
                           </span>
                         </div>
                         
