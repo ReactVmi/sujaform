@@ -49,7 +49,7 @@ export const manual = {
       "15_hours": {
         value: "15",
         variant: "Hours",
-        desc:'Perfect for learners with a solid understanding of basic driving skills but looking to boost their confidence in areas such as complex junctions. Its suitable for those who have completed some lessons and are nearing readiness for the practical test.',
+        desc:"Perfect for learners with a solid understanding of basic driving skills but looking to boost their confidence in areas such as complex junctions. It's suitable for those who have completed some lessons and are nearing readiness for the practical test.",
         full: 975,
         deposit: 825
       },
@@ -63,14 +63,14 @@ export const manual = {
       "24_hours": {
         value: "24",
         variant: "Hours",
-        desc:'This option is ideal for learners with moderate experience, who feel comfortable with general driving but need a thorough practice of manoeuvres, dual carriageways, and driving under various conditions. Its also a great fit for those returning to driving after a long break.',
+        desc:"This option is ideal for learners with moderate experience, who feel comfortable with general driving but need a thorough practice of manoeuvres, dual carriageways, and driving under various conditions. It's also a great fit for those returning to driving after a long break.",
         full: 1419,
         deposit: 939
       },
       "28_hours": {
         value: "28",
         variant: "Hours",
-        desc:'Best suited for learners who have basic driving knowledge but require a more comprehensive review of all aspects of driving. Its great for those who want to ensure full preparation, including plenty of practice in a range of road and traffic conditions.',
+        desc:"Best suited for learners who have basic driving knowledge but require a more comprehensive review of all aspects of driving. It's great for those who want to ensure full preparation, including plenty of practice in a range of road and traffic conditions.",
         full: 1619,
         deposit: 1059
       },
@@ -214,7 +214,7 @@ export const auto = {
       "15_hours": {
         value: "15",
         variant: "Hours",
-        desc:'Perfect for learners with a solid understanding of basic driving skills but looking to boost their confidence in areas such as complex junctions. Its suitable for those who have completed some lessons and are nearing readiness for the practical test.',
+        desc:"Perfect for learners with a solid understanding of basic driving skills but looking to boost their confidence in areas such as complex junctions. It's suitable for those who have completed some lessons and are nearing readiness for the practical test.",
         full: 975,
         deposit: 825
       },
@@ -228,14 +228,14 @@ export const auto = {
       "24_hours": {
         value: "24",
         variant: "Hours",
-        desc:'This option is ideal for learners with moderate experience, who feel comfortable with general driving but need a thorough practice of manoeuvres, dual carriageways, and driving under various conditions. Its also a great fit for those returning to driving after a long break.',
+        desc:"This option is ideal for learners with moderate experience, who feel comfortable with general driving but need a thorough practice of manoeuvres, dual carriageways, and driving under various conditions. It's also a great fit for those returning to driving after a long break.",
         full: 1419,
         deposit: 939
       },
       "28_hours": {
         value: "28",
         variant: "Hours",
-        desc:'Best suited for learners who have basic driving knowledge but require a more comprehensive review of all aspects of driving. Its great for those who want to ensure full preparation, including plenty of practice in a range of road and traffic conditions.',
+        desc:"Best suited for learners who have basic driving knowledge but require a more comprehensive review of all aspects of driving. It's great for those who want to ensure full preparation, including plenty of practice in a range of road and traffic conditions.",
         full: 1619,
         deposit: 1059
       },
